@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ctwevqwcjx5e6"]
+
+[sub_resource type="GDScript" id="GDScript_qcbvg"]
+script/source = "extends Node2D
+var running = true
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_hit_colis_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if(running):
+		get_tree().call_group(\"Colisions\", \"hurtGet\")
+		print(\"Hit\")
+		self.running = !running
+	pass # Replace with function body.
+
+
+func _on_point_colis_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if(running):
+		get_tree().call_group(\"Colisions\", \"hurtGet\")
+		print(\"Point\")
+		self.running = !running
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl1jc"]
+size = Vector2(73, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcbvg"]
+size = Vector2(46, 539)
+
+[node name="Obstacle" type="Node2D" unique_id=1943953122 groups=["Colisions"]]
+script = SubResource("GDScript_qcbvg")
+
+[node name="HitColis" type="Area2D" parent="." unique_id=11593055]
+
+[node name="HitBox" type="CollisionShape2D" parent="HitColis" unique_id=617689274]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_sl1jc")
+
+[node name="PointColis" type="Area2D" parent="." unique_id=444876494 groups=["Colisions"]]
+
+[node name="PointBox" type="CollisionShape2D" parent="PointColis" unique_id=1941595242]
+position = Vector2(1, -300.5)
+shape = SubResource("RectangleShape2D_qcbvg")
+
+[connection signal="area_entered" from="HitColis" to="." method="_on_hit_colis_area_entered"]
+[connection signal="body_shape_entered" from="HitColis" to="." method="_on_hit_colis_body_shape_entered"]
+[connection signal="area_entered" from="PointColis" to="." method="_on_point_colis_area_entered"]
+[connection signal="body_shape_entered" from="PointColis" to="." method="_on_point_colis_body_shape_entered"]

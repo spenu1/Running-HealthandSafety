@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bl5kq50ejrljs"]
+
+[ext_resource type="Texture2D" uid="uid://bcmoa3ln4ascl" path="res://icon.svg" id="1_71hxw"]
+[ext_resource type="PackedScene" uid="uid://ctwevqwcjx5e6" path="res://obstacle.tscn" id="2_hus8h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hus8h"]
+size = Vector2(776, 148)
+
+[node name="Running" type="Node2D" unique_id=1262667764]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1531224054]
+position = Vector2(1516, 583)
+scale = Vector2(5.266507, 0.33580405)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2076672027]
+position = Vector2(99.000015, 105)
+scale = Vector2(6.021096, 1.2602266)
+texture = ExtResource("1_71hxw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=397489107]
+position = Vector2(99, 99)
+shape = SubResource("RectangleShape2D_hus8h")
+
+[node name="Obstacle2" parent="." unique_id=1943953122 instance=ExtResource("2_hus8h")]
+position = Vector2(1981, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle2" unique_id=1392040733]
+position = Vector2(0, -4)
+scale = Vector2(0.76183325, 0.6250863)
+texture = ExtResource("1_71hxw")
+
+[node name="Obstacle" parent="." unique_id=227316608 instance=ExtResource("2_hus8h")]
+position = Vector2(909, 559)
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle" unique_id=2053367752]
+position = Vector2(0, -4)
+scale = Vector2(0.76183325, 0.6250863)
+texture = ExtResource("1_71hxw")
+
+[node name="Obstacle3" parent="." unique_id=1241173854 instance=ExtResource("2_hus8h")]
+position = Vector2(3119, 551)
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle3" unique_id=840503566]
+position = Vector2(0, -4)
+scale = Vector2(0.76183325, 0.6250863)
+texture = ExtResource("1_71hxw")

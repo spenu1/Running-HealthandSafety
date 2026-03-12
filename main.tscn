@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cke3f1w678715"]
+
+[ext_resource type="Texture2D" uid="uid://bcmoa3ln4ascl" path="res://icon.svg" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://d4k2ns1luke5q" path="res://node_2d.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bl5kq50ejrljs" path="res://running.tscn" id="3_h2yge"]
+
+[sub_resource type="GDScript" id="GDScript_0xm2m"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func pointGet() -> void:
+	print(\"Point\")
+	pass
+	
+func hurtGet() -> void:
+	print(\"Hit\")
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(776, 148)
+
+[sub_resource type="GDScript" id="GDScript_h2yge"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	position.x += delta*-200
+	pass
+"
+
+[node name="Main" type="Node2D" unique_id=1167737423]
+script = SubResource("GDScript_0xm2m")
+
+[node name="Node2D" parent="." unique_id=918046012 groups=["Colisions"] instance=ExtResource("1_ig7tw")]
+position = Vector2(95, 522)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2122982125]
+position = Vector2(-563, 367)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1581705750]
+position = Vector2(99.000015, 105)
+scale = Vector2(6.021096, 1.2602266)
+texture = ExtResource("1_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1818631803]
+position = Vector2(99, 99)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Running" parent="." unique_id=1262667764 instance=ExtResource("3_h2yge")]
+script = SubResource("GDScript_h2yge")
