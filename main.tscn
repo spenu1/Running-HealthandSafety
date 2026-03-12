@@ -48,10 +48,12 @@ func _process(delta: float) -> void:
 script = SubResource("GDScript_0xm2m")
 
 [node name="Node2D" parent="." unique_id=918046012 groups=["Colisions"] instance=ExtResource("1_ig7tw")]
-position = Vector2(95, 522)
+position = Vector2(119, 235)
+scale = Vector2(0.66765726, 0.79986286)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2122982125]
-position = Vector2(-563, 367)
+position = Vector2(-518, 207)
+scale = Vector2(0.66765726, 0.79986286)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1581705750]
 position = Vector2(99.000015, 105)
@@ -63,4 +65,6 @@ position = Vector2(99, 99)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="Running" parent="." unique_id=1262667764 instance=ExtResource("3_h2yge")]
+position = Vector2(45, -160)
+scale = Vector2(0.66765726, 0.79986286)
 script = SubResource("GDScript_h2yge")
