@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://bl5kq50ejrljs"]
 
-[ext_resource type="Texture2D" uid="uid://bcmoa3ln4ascl" path="res://icon.svg" id="1_71hxw"]
 [ext_resource type="PackedScene" uid="uid://ctwevqwcjx5e6" path="res://obstacle.tscn" id="2_hus8h"]
 [ext_resource type="Texture2D" uid="uid://dxdxynk53dbtj" path="res://Assets/Cable.png" id="3_3c37w"]
 [ext_resource type="Texture2D" uid="uid://chjf4tb5g2bdo" path="res://Assets/Sign.png" id="4_b1lmo"]
 [ext_resource type="Texture2D" uid="uid://b8yag45obo1tq" path="res://Assets/Boxes.png" id="5_2v78k"]
 
+[sub_resource type="Gradient" id="Gradient_h0d11"]
+colors = PackedColorArray(0, 0, 0.627451, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3c37w"]
+gradient = SubResource("Gradient_h0d11")
+fill_to = Vector2(0, 0.9461806)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hus8h"]
-size = Vector2(776, 148)
+size = Vector2(772.0526, 148)
 
 [node name="Running" type="Node2D" unique_id=1262667764]
 
@@ -16,12 +22,13 @@ position = Vector2(1516, 583)
 scale = Vector2(5.266507, 0.33580405)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2076672027]
-position = Vector2(99.000015, 110.69486)
-scale = Vector2(6.021096, 1.1712444)
-texture = ExtResource("1_71hxw")
+position = Vector2(96.83833, 464.5566)
+scale = Vector2(12.051394, 13.772912)
+texture = SubResource("GradientTexture2D_3c37w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=397489107]
-position = Vector2(99, 99)
+position = Vector2(97.026306, 99)
+scale = Vector2(1, 0.99999994)
 shape = SubResource("RectangleShape2D_hus8h")
 
 [node name="Obstacle2" parent="." unique_id=1943953122 instance=ExtResource("2_hus8h")]

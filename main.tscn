@@ -85,6 +85,6 @@ scale = Vector2(0.66765726, 0.79986286)
 script = SubResource("GDScript_h2yge")
 
 [node name="Running2" parent="." unique_id=489708128 instance=ExtResource("3_h2yge")]
-position = Vector2(2763, -159)
+position = Vector2(2757.0002, -160.00002)
 scale = Vector2(0.66765726, 0.79986286)
 script = SubResource("GDScript_1bvp3")
