@@ -44,6 +44,21 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="GDScript" id="GDScript_1bvp3"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	position.x += delta*-200
+	pass
+"
+
 [node name="Main" type="Node2D" unique_id=1167737423]
 script = SubResource("GDScript_0xm2m")
 
@@ -68,3 +83,8 @@ shape = SubResource("RectangleShape2D_0xm2m")
 position = Vector2(45, -160)
 scale = Vector2(0.66765726, 0.79986286)
 script = SubResource("GDScript_h2yge")
+
+[node name="Running2" parent="." unique_id=489708128 instance=ExtResource("3_h2yge")]
+position = Vector2(2763, -159)
+scale = Vector2(0.66765726, 0.79986286)
+script = SubResource("GDScript_1bvp3")

@@ -20,7 +20,7 @@ func _on_hit_colis_body_shape_entered(body_rid: RID, body: Node2D, body_shape_in
 		print(\"Hit\")
 		self.running = !running
 	pass # Replace with function body.
-
+#yo
 
 func _on_point_colis_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if(running):
@@ -48,7 +48,7 @@ shape = SubResource("RectangleShape2D_sl1jc")
 [node name="PointColis" type="Area2D" parent="." unique_id=444876494 groups=["Colisions"]]
 
 [node name="PointBox" type="CollisionShape2D" parent="PointColis" unique_id=1941595242]
-position = Vector2(1, -300.5)
+position = Vector2(1, -307)
 shape = SubResource("RectangleShape2D_qcbvg")
 
 [connection signal="area_entered" from="HitColis" to="." method="_on_hit_colis_area_entered"]

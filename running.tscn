@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bcmoa3ln4ascl" path="res://icon.svg" id="1_71hxw"]
 [ext_resource type="PackedScene" uid="uid://ctwevqwcjx5e6" path="res://obstacle.tscn" id="2_hus8h"]
+[ext_resource type="Texture2D" uid="uid://dxdxynk53dbtj" path="res://Assets/Cable.png" id="3_3c37w"]
+[ext_resource type="Texture2D" uid="uid://chjf4tb5g2bdo" path="res://Assets/Sign.png" id="4_b1lmo"]
+[ext_resource type="Texture2D" uid="uid://b8yag45obo1tq" path="res://Assets/Boxes.png" id="5_2v78k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hus8h"]
 size = Vector2(776, 148)
@@ -13,8 +16,8 @@ position = Vector2(1516, 583)
 scale = Vector2(5.266507, 0.33580405)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2076672027]
-position = Vector2(99.000015, 105)
-scale = Vector2(6.021096, 1.2602266)
+position = Vector2(99.000015, 110.69486)
+scale = Vector2(6.021096, 1.1712444)
 texture = ExtResource("1_71hxw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=397489107]
@@ -25,22 +28,22 @@ shape = SubResource("RectangleShape2D_hus8h")
 position = Vector2(1981, 554)
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacle2" unique_id=1392040733]
-position = Vector2(0, -4)
-scale = Vector2(0.76183325, 0.6250863)
-texture = ExtResource("1_71hxw")
+position = Vector2(0, -8.294992)
+scale = Vector2(3.772, 3.380333)
+texture = ExtResource("3_3c37w")
 
 [node name="Obstacle" parent="." unique_id=227316608 instance=ExtResource("2_hus8h")]
-position = Vector2(909, 559)
+position = Vector2(909, 556)
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacle" unique_id=2053367752]
-position = Vector2(0, -4)
-scale = Vector2(0.76183325, 0.6250863)
-texture = ExtResource("1_71hxw")
+position = Vector2(6, -8)
+scale = Vector2(4.077, 3.344)
+texture = ExtResource("4_b1lmo")
 
 [node name="Obstacle3" parent="." unique_id=1241173854 instance=ExtResource("2_hus8h")]
 position = Vector2(3119, 551)
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacle3" unique_id=840503566]
-position = Vector2(0, -4)
-scale = Vector2(0.76183325, 0.6250863)
-texture = ExtResource("1_71hxw")
+position = Vector2(5, 7.000001)
+scale = Vector2(5.047, 4.139)
+texture = ExtResource("5_2v78k")
