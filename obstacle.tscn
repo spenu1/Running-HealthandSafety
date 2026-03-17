@@ -17,15 +17,13 @@ func _process(delta: float) -> void:
 func _on_hit_colis_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if(running):
 		get_tree().call_group(\"Colisions\", \"hurtGet\")
-		print(\"Hit\")
 		self.running = !running
 	pass # Replace with function body.
 #yo
 
 func _on_point_colis_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if(running):
-		get_tree().call_group(\"Colisions\", \"hurtGet\")
-		print(\"Point\")
+		get_tree().call_group(\"Colisions\", \"pointGet\")
 		self.running = !running
 	pass # Replace with function body.
 "

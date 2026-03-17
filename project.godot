@@ -15,6 +15,10 @@ run/main_scene="uid://cke3f1w678715"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [global_group]
 
 Colisions=""

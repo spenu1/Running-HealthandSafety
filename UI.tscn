@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cx6yo43xlirpt"]
+
+[sub_resource type="GDScript" id="GDScript_wusub"]
+script/source = "extends Control
+var score = 0
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func pointGet() -> void:
+	score += 1
+	self.get_node(\"Score\").text = str(score)
+	pass
+
+func hurtGet() -> void:
+	score += 1
+	self.get_node(\"Score\").text = str(score)
+	pass
+"
+
+[node name="Control" type="Control" unique_id=950557039 groups=["Colisions"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_wusub")
+
+[node name="Label" type="Label" parent="." unique_id=1599869561]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 40
+text = "Score:"
+
+[node name="Score" type="Label" parent="." unique_id=1856420646]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 2.0
+offset_right = 246.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 40
+text = "0"

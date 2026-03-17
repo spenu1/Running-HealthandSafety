@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cke3f1w678715"]
 
 [ext_resource type="Texture2D" uid="uid://bcmoa3ln4ascl" path="res://icon.svg" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cx6yo43xlirpt" path="res://UI.tscn" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://d4k2ns1luke5q" path="res://node_2d.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bl5kq50ejrljs" path="res://running.tscn" id="3_h2yge"]
 
@@ -61,6 +62,8 @@ func _process(delta: float) -> void:
 
 [node name="Main" type="Node2D" unique_id=1167737423]
 script = SubResource("GDScript_0xm2m")
+
+[node name="Control" parent="." unique_id=950557039 instance=ExtResource("1_1bvp3")]
 
 [node name="Node2D" parent="." unique_id=918046012 groups=["Colisions"] instance=ExtResource("1_ig7tw")]
 position = Vector2(119, 235)
