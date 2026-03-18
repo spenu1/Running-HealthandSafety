@@ -19,12 +19,11 @@ func pointGet() -> void:
 	pass
 
 func hurtGet() -> void:
-	score += 1
 	self.get_node(\"Score\").text = str(score)
 	pass
 "
 
-[node name="Control" type="Control" unique_id=950557039 groups=["Colisions"]]
+[node name="Control" type="Control" unique_id=950557039 groups=["Colisions", "GameState"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

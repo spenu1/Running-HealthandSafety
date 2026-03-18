@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://j0cwmkp2wkxh"]
+
+[sub_resource type="GDScript" id="GDScript_nitfa"]
+resource_name = "StartMenuScript"
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	self.visible = false
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_play_pressed() -> void:
+	self.hide()
+	get_tree().call_group(\"GameState\",\"startGame\")
+	pass # Replace with function body.
+	
+	
+func gameOver(score) -> void:
+	$ColorRect/ScoreLabel.text = str(score)
+	self.visible = true
+	pass
+"
+
+[node name="StartScreen" type="Control" unique_id=541041636 groups=["Colisions", "GameState"]]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = SubResource("GDScript_nitfa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=119160536]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.97778
+offset_top = -191.0
+offset_right = 207.97778
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="ColorRect" unique_id=1490649995]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -85.0
+offset_right = 112.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 37
+text = "Play"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=1999437008 groups=["GameState"]]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 26.0
+offset_right = 96.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.17211533, 0.1721153, 0.1721153, 1)
+text = "Placeholder End Game"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ColorRect" unique_id=1187942585 groups=["GameState"]]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 99.0
+offset_right = 96.0
+offset_bottom = 139.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.17211533, 0.1721153, 0.1721153, 1)
+text = "Your Score Was:"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="RichTextLabel" parent="ColorRect" unique_id=1005801739 groups=["GameState"]]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 39.0
+offset_top = 100.0
+offset_right = 116.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.17211533, 0.1721153, 0.1721153, 1)
+text = "1"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ColorRect/Play" to="." method="_on_play_pressed"]

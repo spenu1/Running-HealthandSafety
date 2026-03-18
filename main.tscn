@@ -4,26 +4,41 @@
 [ext_resource type="PackedScene" uid="uid://cx6yo43xlirpt" path="res://UI.tscn" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://d4k2ns1luke5q" path="res://node_2d.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bl5kq50ejrljs" path="res://running.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ccpkm0dp5ra2g" path="res://StartScreen.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://j0cwmkp2wkxh" path="res://EndScreen.tscn" id="6_7mycd"]
 
 [sub_resource type="GDScript" id="GDScript_0xm2m"]
 script/source = "extends Node2D
-
-
+var runners
+var gamePlaying = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	runners = [get_node(\"Running\"),get_node(\"Running2\")]
+	print(runners)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if gamePlaying:
+		for i in runners:
+			i.position.x += delta*-200
 	pass
 
+#methods called by groups
+func startGame() -> void:#gamestate
+	#	position.x += delta*-200
+	gamePlaying = true
+	pass
+
+#Colisions
 func pointGet() -> void:
 	print(\"Point\")
 	pass
 	
 func hurtGet() -> void:
-	print(\"Hit\")
+	get_tree().call_group(\"GameState\", \"gameOver\", get_node(\"Control\").score)
 	pass
 "
 
@@ -41,7 +56,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.x += delta*-200
+
 	pass
 "
 
@@ -56,11 +71,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.x += delta*-200
+
 	pass
 "
 
-[node name="Main" type="Node2D" unique_id=1167737423]
+[node name="Main" type="Node2D" unique_id=1167737423 groups=["Colisions", "GameState"]]
 script = SubResource("GDScript_0xm2m")
 
 [node name="Control" parent="." unique_id=950557039 instance=ExtResource("1_1bvp3")]
@@ -91,3 +106,12 @@ script = SubResource("GDScript_h2yge")
 position = Vector2(2757.0002, -160.00002)
 scale = Vector2(0.66765726, 0.79986286)
 script = SubResource("GDScript_1bvp3")
+
+[node name="StartScreen" parent="." unique_id=541041636 instance=ExtResource("5_lquwl")]
+offset_left = 609.0
+offset_top = 298.0
+offset_right = 609.0
+offset_bottom = 298.0
+
+[node name="EndScreen" parent="." unique_id=1690506190 instance=ExtResource("6_7mycd")]
+visible = true

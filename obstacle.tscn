@@ -29,7 +29,7 @@ func _on_point_colis_body_shape_entered(body_rid: RID, body: Node2D, body_shape_
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sl1jc"]
-size = Vector2(73, 68)
+size = Vector2(66, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcbvg"]
 size = Vector2(46, 539)
@@ -39,14 +39,14 @@ script = SubResource("GDScript_qcbvg")
 
 [node name="HitColis" type="Area2D" parent="." unique_id=11593055]
 
-[node name="HitBox" type="CollisionShape2D" parent="HitColis" unique_id=617689274]
-position = Vector2(0.5, -1)
+[node name="HitBox" type="CollisionShape2D" parent="HitColis" unique_id=617689274 groups=["Colisions"]]
+position = Vector2(-3, -3)
 shape = SubResource("RectangleShape2D_sl1jc")
 
 [node name="PointColis" type="Area2D" parent="." unique_id=444876494 groups=["Colisions"]]
 
 [node name="PointBox" type="CollisionShape2D" parent="PointColis" unique_id=1941595242]
-position = Vector2(1, -307)
+position = Vector2(85, -234)
 shape = SubResource("RectangleShape2D_qcbvg")
 
 [connection signal="area_entered" from="HitColis" to="." method="_on_hit_colis_area_entered"]

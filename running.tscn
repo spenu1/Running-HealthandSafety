@@ -32,7 +32,7 @@ scale = Vector2(1, 0.99999994)
 shape = SubResource("RectangleShape2D_hus8h")
 
 [node name="Obstacle2" parent="." unique_id=1943953122 instance=ExtResource("2_hus8h")]
-position = Vector2(1981, 554)
+position = Vector2(1980, 553)
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacle2" unique_id=1392040733]
 position = Vector2(0, -8.294992)
@@ -40,11 +40,11 @@ scale = Vector2(3.772, 3.380333)
 texture = ExtResource("3_3c37w")
 
 [node name="Obstacle" parent="." unique_id=227316608 instance=ExtResource("2_hus8h")]
-position = Vector2(909, 556)
+position = Vector2(909, 553)
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacle" unique_id=2053367752]
-position = Vector2(6, -8)
-scale = Vector2(4.077, 3.344)
+position = Vector2(0, -11)
+scale = Vector2(4.0666647, 3.466666)
 texture = ExtResource("4_b1lmo")
 
 [node name="Obstacle3" parent="." unique_id=1241173854 instance=ExtResource("2_hus8h")]

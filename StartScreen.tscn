@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ccpkm0dp5ra2g"]
+
+[sub_resource type="GDScript" id="GDScript_nitfa"]
+resource_name = "StartMenuScript"
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_play_pressed() -> void:
+	self.hide()
+	get_tree().call_group(\"GameState\",\"startGame\")
+	pass # Replace with function body.
+	
+"
+
+[node name="StartScreen" type="Control" unique_id=541041636 groups=["GameState"]]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = SubResource("GDScript_nitfa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=119160536]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.97778
+offset_top = -191.0
+offset_right = 207.97778
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="ColorRect" unique_id=1490649995]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -85.0
+offset_right = 112.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 37
+text = "Play"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=1999437008]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 26.0
+offset_right = 96.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.17211533, 0.1721153, 0.1721153, 1)
+text = "Placeholder Start Game"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ColorRect/Play" to="." method="_on_play_pressed"]
